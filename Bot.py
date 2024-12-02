@@ -88,7 +88,7 @@ def getpfpurl(user_id):
     except (requests.RequestException, IndexError, KeyError):
         return "https://www.roblox.com/images/RobloxDefaultAvatar.png"
 
-@tasks.loop(seconds=1)
+@tasks.loop(seconds=5)
 async def rain_notifier():
     channel = client.get_channel(channel_id)
     if not channel:
@@ -98,7 +98,7 @@ async def rain_notifier():
         rain = active()
         if rain is not None and rain.get('active', False):
             break
-        await asyncio.sleep(1)
+        await asyncio.sleep(5)
     user_id, host_username = get_host_id(rain['host'])
     avatar_url = getpfpurl(user_id) if user_id else getpfpurl(1)
 
@@ -126,7 +126,7 @@ async def rain_notifier():
     playerCheck = playercount.copy()
 
     while rain_active:
-        await asyncio.sleep(1)
+        await asyncio.sleep(5)
         current_rain = active()
         if current_rain is None or not current_rain.get('active', False):
             rain_active = False
