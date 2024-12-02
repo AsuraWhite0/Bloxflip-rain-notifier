@@ -9,3 +9,8 @@ Make your server GROW. Do NOT try sell this scr. because it the free scr by ME. 
 
 
 By Asura !
+
+Updated :
+
+Please switch "https://api.bloxfip.com/chat/history" to "https://api.bflip.com/chat/history" 
+if something worng
